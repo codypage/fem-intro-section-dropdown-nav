@@ -1,0 +1,13 @@
+@use 'globals';
+
+body {
+  font-family: var(--font-epilogue);
+}
+
+h1 {
+  font-weight: bold;
+  font-size: rem(80);
+  line-height: rem(80);
+  letter-spacing: rem(-1.11);
+  margin-bottom: 1rem;
+}

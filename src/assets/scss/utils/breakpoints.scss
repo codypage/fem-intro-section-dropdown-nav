@@ -1,0 +1,38 @@
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+  'medium': '40em',
+  'large': '64em',
+  'xlarge': '87.5em'
+);
+
+// 639, 1023, 1399
+$breakpoints-down: (
+  'small': '39.9375em',
+  'medium': '63.9375em',
+  'large': '87.437em'
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+// This is for when you want to use max-width to write styles for small/medium devices but not large.
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+// How to use
+
+/*
+
+h1 {
+  @include breakpoint(large) {
+    font-size: 3rem;
+  }
+}
+
+*/
